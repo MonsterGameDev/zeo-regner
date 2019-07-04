@@ -1,0 +1,49 @@
+<GridLayout rows="auto, *">
+    <StackLayout row="0">
+        <Label 
+            text="Prins Zeos" 
+            fontSize="30" 
+            horizontalAlignment="center" 
+            fontStyle="italic" ></Label>
+        <Label text="Regnemaskine"fontSize="15" 
+        horizontalAlignment="center" style="margin-bottom: 30"></Label>
+    </StackLayout>
+  <GridLayout row="1" rows="auto, auto, auto, auto">
+    <Label row="0" [text]="calculation"
+        horizontalAlignment="center"
+        fontSize="100"
+        ></Label>
+    <Button
+      row="1"
+      text="NY OPGAVE"
+      class="btn btn-outline btn-rounded-lg"
+      (tap)="generateNew()"
+      fontSize="30"
+    ></Button>
+    <Image src="—/images/xxx.png"></Image>
+    <TextField
+      row="2"
+      hint="SVAR"
+      [(ngModel)]="answer"
+      secure="false"
+      keyboardType="phone"
+      returnKeyType="done"
+      returnPress="onReturnPress"
+      autocorrect="false"
+      maxLength="10"
+      focus="onFocus"
+      blur="onBlur"
+      class="input input-border"
+      fontSize="120"
+      horizontalAlignment="center"
+    ></TextField>
+    <Button
+      row="3"
+      text="OK"
+      class="btn btn-primary btn-rounded-lg btn-active"
+      (tap)="checkAnswer()"
+      fontSize="50"
+    ></Button>
+    <Label [text]="feedback" textWrap="true"></Label>
+  </GridLayout>
+</GridLayout>
